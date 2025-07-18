@@ -46,7 +46,7 @@ public class NotificacionController {
     public Map<String, Object> obtenerNotificacionConCarrito(@PathVariable Long id) {
         Notificacion notificacion = notificacionService.obtenerPorId(id);
         Carrito carrito = restTemplate.getForObject(
-                "http://localhost:8083/api/carritos/" + notificacion.getCarritoId(),
+                "https://carritoservice.onrender.com/api/carritos/" + notificacion.getCarritoId(),
                 Carrito.class
         );
         Map<String, Object> respuesta = new HashMap<>();
